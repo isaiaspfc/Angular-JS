@@ -1,0 +1,34 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="BairroForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input class="form-control" type="text" ng-model="Bairro.nome" name="nome" ng-required="true" />
+                            </div>
+                            <div ng-show="BairroForm.nome.$dirty" ng-messages="BairroForm.nome.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo nome!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">IPTU</span>
+                                <input class="form-control" type="text" ng-model="Bairro.valorIPTU" name="valor_iptu" ng-required="true" />
+                            </div>
+                            <div ng-show="BairroForm.valor_iptu.$error.required && BairroForm.valor_iptu.$dirty" ng-messages="BairroForm.valor_iptu.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo do valor do IPTU!
+                                </div>
+                            </div>
+                        </form>
+                        <a href="#/bairro" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-success btn-block" ng-click="adicionar(Bairro)" ng-disabled="BairroForm.$invalid">Adicionar Bairro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

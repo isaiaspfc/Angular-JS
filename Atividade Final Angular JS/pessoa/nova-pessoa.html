@@ -1,0 +1,145 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="PessoaForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input class="form-control" type="text" ng-model="Pessoa.nome" name="nome" ng-required="true" />
+                            </div>
+                            <div ng-show="PessoaForm.nome.$dirty" ng-messages="PessoaForm.nome.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo nome!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Data de Nascimento</span>
+                                <input class="form-control" type="text" ng-model="Pessoa.data_nascimento" name="data_nascimento" ng-required="true" />
+                            </div>
+                            <div ng-show="PessoaForm.data_nascimento.$dirty" ng-messages="PessoaForm.data_nascimento.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo data de nascimento!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Altura</span>
+                                <input class="form-control" type="text" ng-model="Pessoa.altura" name="altura" ng-required="true" />
+                            </div>
+                            <div ng-show="PessoaForm.altura.$dirty" ng-messages="PessoaForm.altura.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo altura!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Peso</span>
+                                <input class="form-control" type="text" ng-model="Pessoa.peso" name="peso" ng-required="true" />
+                            </div>
+                            <div ng-show="PessoaForm.peso.$dirty" ng-messages="PessoaForm.peso.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo peso!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">CPF</span>
+                                <input class="form-control" type="text" ng-model="Pessoa.cpf" name="cpf" ng-required="true" />
+                            </div>
+                            <div ng-show="PessoaForm.cpf.$dirty" ng-messages="PessoaForm.cpf.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo CPF!
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Sexo</label>
+                                <select name="selecao_sexo" ng-model="Pessoa.sexo" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha um sexo</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                </select>
+                            </div>
+                            <div ng-show="PessoaForm.selecao_sexo.$dirty" ng-messages="PessoaForm.selecao_sexo.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione um sexo!
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Tipo de Pessoa</label>
+                                <select name="selecao_tipo_pessoa" ng-model="Pessoa.tipo_pessoa" class="form-control" ng-required="true">
+                                    <option value=""
+                                        selected>Selecione o tipo de Pessoa</option>
+                                    <option value="Física">Física</option>
+                                    <option value="Jurídica">Jurídica</option>
+                                    <option value="Especial">Especial</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div ng-show="PessoaForm.selecao_tipo_pessoa.$dirty" ng-messages="PessoaForm.selecao_tipo_pessoa.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione um tipo de Pessoa!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Especial</label>
+                                <select name="selecao_especial" ng-model="Pessoa.especial" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Necessidades especiais?</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                </select>
+                            </div>
+                            <div ng-show="PessoaForm.selecao_especial.$dirty" ng-messages="PessoaForm.selecao_especial.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione se é especial!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="bairros">Endereços</label>
+                                <select name="selecao_endereco" ng-model="Pessoa.Endereco" ng-options="Endereco.id + ' ' + Endereco.rua + ' ' + Endereco.numero + ' ' + Endereco.complemento + ' ' + Endereco.Bairro.nome  for Endereco in Enderecos" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha um endereço</option>
+                                </select>
+                            </div>
+                            <div ng-show="PessoaForm.selecao_endereco.$dirty" ng-messages="PessoaForm.selecao_endereco.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione um endereço!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="bairros">Profissão</label>
+                                <select name="selecao_profissao" ng-model="Pessoa.Profissao" ng-options="Profissao.id + ' ' + Profissao.nome + ' ' for Profissao in Profissoes" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha uma profissão</option>
+                                </select>
+                            </div>
+                            <div ng-show="PessoaForm.selecao_profissao.$dirty" ng-messages="PessoaForm.selecao_profissao.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione uma profissão!
+                                </div>
+                            </div>
+                        </form>
+                        <div ng-show="PessoaForm.nome.$dirty" ng-messages="PessoaForm.nome.$error">
+                            <div ng-message="required" class="alert alert-danger">
+                                Por favor, preencha o campo nome!
+                            </div>
+                            <div ng-message="minlength" class="alert alert-danger">
+                                O campo nome deve ter no mínimo 10 caracteres.
+                            </div>
+                        </div>
+                        <div ng-show="PessoaForm.telefone.$error.required && PessoaForm.telefone.$dirty" class="alert alert-danger">
+                            Por favor, preencha o campo telefone!
+                        </div>
+                        <div ng-show="PessoaForm.telefone.$error.pattern" class="alert alert-danger">
+                            O campo telefone deve ter o formato DDDDD-DDDD.
+                        </div>
+                        <a href="#pessoa" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-success btn-block" ng-click="adicionar(Pessoa)" ng-disabled="PessoaForm.$invalid">Adicionar Pessoa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

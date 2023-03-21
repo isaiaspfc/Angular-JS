@@ -1,0 +1,200 @@
+{
+  "bairro": [
+    {
+      "nome": "Bela Vista",
+      "valorIPTU": "1200",
+      "id": 1
+    },
+    {
+      "nome": "Vila Aurora",
+      "valorIPTU": "600",
+      "id": 3
+    },
+    {
+      "nome": "Rua Bento",
+      "valorIPTU": "400",
+      "id": 4
+    }
+  ],
+  "endereco": [
+    {
+      "rua": "Alameda Rios",
+      "numero": "678",
+      "cep": "75572-250",
+      "Bairro": {
+        "nome": "Vila Aurora",
+        "valorIPTU": "600",
+        "id": 3
+      },
+      "complemento": "Em frente ao Shopping",
+      "id": 3
+    },
+    {
+      "rua": "Rua do Centro",
+      "numero": "444",
+      "cep": "72231-482",
+      "Bairro": {
+        "nome": "Bela Vista",
+        "valorIPTU": "1200",
+        "id": 1
+      },
+      "id": 4
+    }
+  ],
+  "profissao": [
+    {
+      "nome": "Engenheiro de Produção",
+      "salario": "7000",
+      "id": 1
+    },
+    {
+      "nome": "Professor",
+      "salario": "3000",
+      "id": 2
+    },
+    {
+      "nome": "Escrivão",
+      "salario": "2000",
+      "id": 4
+    }
+  ],
+  "pessoa": [
+    {
+      "nome": "Ricardo Campos",
+      "data_nascimento": "12/12/1980",
+      "altura": "1,84",
+      "peso": "79",
+      "cpf": "412.032.487-30",
+      "sexo": "Masculino",
+      "tipo_pessoa": "Física",
+      "especial": "Não",
+      "Endereco": {
+        "rua": "Alameda Rios",
+        "numero": "678",
+        "cep": "75572-250",
+        "Bairro": {
+          "nome": "Vila Aurora",
+          "valorIPTU": "600",
+          "id": 3
+        },
+        "complemento": "Em frente ao Shopping",
+        "id": 3
+      },
+      "Profissao": {
+        "nome": "Engenheiro de Produção",
+        "salario": "6000",
+        "id": 1
+      },
+      "id": 2
+    }
+  ],
+  "compra": [
+    {
+      "valor_total": "850",
+      "Pessoa": {
+        "nome": "Ricardo Campos",
+        "data_nascimento": "12/12/1980",
+        "altura": "1,84",
+        "peso": "80",
+        "cpf": "412.032.487-30",
+        "sexo": "Masculino",
+        "tipo_pessoa": "Física",
+        "especial": "Não",
+        "Endereco": {
+          "rua": "Alameda Rios",
+          "numero": "677",
+          "cep": "75572-250",
+          "Bairro": {
+            "nome": "Vila Aurora",
+            "valorIPTU": "600",
+            "id": 3
+          },
+          "complemento": "Em frente ao Shopping",
+          "id": 3
+        },
+        "Profissao": {
+          "nome": "Engenheiro de Produção",
+          "salario": "7000",
+          "id": 1
+        },
+        "id": 2
+      },
+      "id": 1
+    }
+  ],
+  "item": [
+    {
+      "nome": "Smartwatch",
+      "valor": "700",
+      "Compra": {
+        "valor_total": "850",
+        "Pessoa": {
+          "nome": "Ricardo Campos",
+          "data_nascimento": "12/12/1980",
+          "altura": "1,84",
+          "peso": "80",
+          "cpf": "412.032.487-30",
+          "sexo": "Masculino",
+          "tipo_pessoa": "Física",
+          "especial": "Não",
+          "Endereco": {
+            "rua": "Alameda Rios",
+            "numero": "677",
+            "cep": "75572-250",
+            "Bairro": {
+              "nome": "Vila Aurora",
+              "valorIPTU": "600",
+              "id": 3
+            },
+            "complemento": "Em frente ao Shopping",
+            "id": 3
+          },
+          "Profissao": {
+            "nome": "Engenheiro de Produção",
+            "salario": "7000",
+            "id": 1
+          },
+          "id": 2
+        },
+        "id": 1
+      },
+      "id": 1
+    },
+    {
+      "nome": "Teclado Mecânico",
+      "valor": "500",
+      "Compra": {
+        "valor_total": "900",
+        "Pessoa": {
+          "nome": "Nagela Bitar",
+          "data_nascimento": "13/02/1900",
+          "altura": "1,75",
+          "peso": "70",
+          "cpf": "142-131-798.20",
+          "sexo": "Feminino",
+          "especial": "Sim",
+          "endereco": {
+            "rua": "Rua Bento",
+            "numero": "123",
+            "cep": "74475-081",
+            "bairro": {
+              "nome": "Bela Vista",
+              "valorIPTU": 1400,
+              "id": 1
+            },
+            "id": 2
+          },
+          "profissao": {
+            "nome": "Professor",
+            "salario": "4000",
+            "id": 2
+          },
+          "id": 1,
+          "tipo_pessoa": "Física"
+        },
+        "id": 1
+      },
+      "id": 2
+    }
+  ]
+}

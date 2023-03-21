@@ -1,0 +1,35 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="ProfissaoForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input class="form-control" type="text" ng-model="Profissao.nome" name="nome" ng-required="true" />
+                            </div>
+                            <div ng-show="ProfissaoForm.nome.$dirty" ng-messages="ProfissaoForm.nome.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo nome !
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Salário</span>
+                                <input class="form-control" type="text" ng-model="Profissao.salario" name="salario" ng-required="true" />
+                            </div>
+                            <div ng-show="ProfissaoForm.salario.$dirty" ng-messages="ProfissaoForm.salario.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preenchan o campo salário !
+                                </div>
+                            </div>
+                        </form>
+
+                        <a href="#profissao" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="adicionar(Profissao)" ng-disabled="ProfissaoForm.$invalid">Adicionar Profissão</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

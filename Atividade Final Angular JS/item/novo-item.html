@@ -1,0 +1,46 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="ItemForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input class="form-control" type="text" ng-model="Item.nome" name="nome" ng-required="true" />
+                            </div>
+                            <div ng-show="ItemForm.nome.$dirty" ng-messages="ItemForm.nome.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo nome!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Valor</label>
+                                <input class="form-control" type="text" ng-model="Item.valor" name="valor" p ng-required="true" />
+                            </div>
+                            <div ng-show="ItemForm.valor.$dirty" ng-messages="ItemForm.valor.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, preencha o campo valor!
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Compras</label>
+                                <select name="selecao_compra" ng-model="Item.Compra" ng-options="Compra.id for Compra in Compras" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escola uma Compra...</option>
+                                </select>
+                            </div>
+                            <div ng-show="ItemForm.selecao_compra.$dirty" ng-messages="ItemForm.selecao_compra.$error">
+                                <div ng-message="required" class="alert alert-danger">
+                                    Por favor, selecione uma compra!
+                                </div>
+                            </div>
+                        </form>
+                        <a href="#/item" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-success btn-block" ng-click="adicionar(Item)" ng-disabled="ItemForm.$invalid">Adicionar Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

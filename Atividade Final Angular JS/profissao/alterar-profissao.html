@@ -1,0 +1,25 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="bairroForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input type="text" class="form-control" id="novo-nome-profissao" ng-model="Profissao.nome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Salário</span>
+                                <input type="text" class="form-control" id="novo-salario" ng-model="Profissao.salario">
+                            </div>
+
+                        </form>
+                        <a href="#profissao" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarProfissao(Profissao)">Alterar Profissão</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

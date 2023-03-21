@@ -1,0 +1,38 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="EnderecoForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Rua</span>
+                                <input type="text" class="form-control" id="nova-rua" ng-model="Endereco.rua">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Número</span>
+                                <input type="text" class="form-control" id="novo-numero" ng-model="Endereco.numero">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Complemento</span>
+                                <input type="text" class="form-control" id="novo-complemento" ng-model="Endereco.complemento">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">CEP</span>
+                                <input type="text" class="form-control" id="novo-cep" ng-model="Endereco.cep">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Bairros</label>
+                                <select ng-model="Endereco.Bairro" ng-options="Bairro.id + ' ' + Bairro.nome for Bairro in Bairros" class="form-control">
+                                    <option value="">Selecione o Bairro...</option>
+                                </select>
+                            </div>
+                        </form>
+                        <a href="#/endereco" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarEndereco(Endereco)">Alterar Endereço</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

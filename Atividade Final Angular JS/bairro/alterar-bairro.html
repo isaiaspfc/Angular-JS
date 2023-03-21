@@ -1,0 +1,38 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="BairroForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input type="text" class="form-control" id="nome-novo-Bairro" ng-model="Bairro.nome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">IPTU</span>
+                                <input type="text" class="form-control" id="valor-do-iptu" ng-model="Bairro.valorIPTU">
+                            </div>
+                        </form>
+                        <div ng-show="BairroForm.nome.$dirty" ng-messages="BairroForm.nome.$error">
+                            <div ng-message="required" class="alert alert-danger">
+                                Por favor, preencha o campo nome!
+                            </div>
+                            <div ng-message="minlength" class="alert alert-danger">
+                                O campo nome deve ter no mínimo 10 caracteres.
+                            </div>
+                        </div>
+                        <div ng-show="BairroForm.telefone.$error.required && BairroForm.telefone.$dirty" class="alert alert-danger">
+                            Por favor, preencha o campo telefone!
+                        </div>
+                        <div ng-show="BairroForm.telefone.$error.pattern" class="alert alert-danger">
+                            O campo telefone deve ter o formato DDDDD-DDDD.
+                        </div>
+                        <a href="#/bairro" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarBairro(Bairro)">Alterar Bairro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

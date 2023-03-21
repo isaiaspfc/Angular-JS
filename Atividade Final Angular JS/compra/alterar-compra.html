@@ -1,0 +1,41 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="CompraForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Valor Total</span>
+                                <input type="text" class="form-control" id="nome-nova-Compra" placeholder="Digite o nome da Compra" ng-model="Compra.valor_total">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Pessoa</label>
+                                <select ng-model="Compra.Pessoa" ng-options="Pessoa.id + ' ' + Pessoa.nome  for Pessoa in Pessoas" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha uma Pessoa</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div ng-show="CompraForm.nome.$dirty" ng-messages="CompraForm.nome.$error">
+                            <div ng-message="required" class="alert alert-danger">
+                                Por favor, preencha o campo nome!
+                            </div>
+                            <div ng-message="minlength" class="alert alert-danger">
+                                O campo nome deve ter no mínimo 10 caracteres.
+                            </div>
+                        </div>
+                        <div ng-show="CompraForm.telefone.$error.required && CompraForm.telefone.$dirty" class="alert alert-danger">
+                            Por favor, preencha o campo telefone!
+                        </div>
+                        <div ng-show="CompraForm.telefone.$error.pattern" class="alert alert-danger">
+                            O campo telefone deve ter o formato DDDDD-DDDD.
+                        </div>
+                        <a href="#/compra" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarCompra(Compra)">Alterar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

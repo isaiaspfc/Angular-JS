@@ -1,0 +1,43 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5 search-box">
+                        <i class="material-icons">&#xE8B6;</i>
+                        <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
+                    </div>
+                    <div class="col-sm-7">
+                        <a href="#nova-profissao" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar nova
+                                profissão</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover" ng-show="Profissoes.length > 0">
+                <thead>
+                    <tr>
+                        <th><a href="" ng-click="ordenarPor('id')">ID</a></th>
+                        <th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+                        <th>Salario</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class="{'selecionado negrito': Profissao.selecionado}" ng-repeat="Profissao in Profissoes | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                        <td>{{Profissao.id}}</td>
+                        <td>{{Profissao.nome}}</td>
+                        <td>{{Profissao.salario | currency}}</td>
+                        <td>
+                            <a href="#/alterar-profissao/{{Profissao.id}}" class="edit" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip"
+                                    title="Edit">&#xE254;</i></a>
+                            <a ng-click="apagarProfissao(Profissao)" class="delete" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip"
+                                    title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

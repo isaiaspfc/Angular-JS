@@ -1,0 +1,81 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div>
+                        <form name="PessoaForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input type="text" class="form-control" id="novo-nome-pessoa" ng-model="Pessoa.nome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Data de Nascimento</span>
+                                <input type="text" class="form-control" id="nova-data-nascimento" ng-model="Pessoa.data_nascimento">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Altura</span>
+                                <input type="text" class="form-control" id="nova-altura" placeholder="Digite a altura" ng-model="Pessoa.altura">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Peso</span>
+                                <input type="text" class="form-control" id="novo-peso" ng-model="Pessoa.peso">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">CPF</span>
+                                <input type="text" class="form-control" id="novo-cpf" ng-model="Pessoa.cpf">
+                            </div>
+
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Sexo</label>
+                                <select ng-model="Pessoa.sexo" class="form-control">
+                                    <option selected
+                                        value="">Escolha um sexo</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Tipo de Pessoa</label>
+                                <select ng-model="Pessoa.tipo_pessoa" class="form-control">
+                                    <option value=""
+                                        selected>Selecione o tipo de Pessoa</option>
+                                    <option value="Física">Física</option>
+                                    <option value="Jurídica">Jurídica</option>
+                                    <option value="Especial">Especial</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Especial</label>
+                                <select ng-model="Pessoa.especial" class="form-control">
+                                    <option selected
+                                        value="">Necessidades especiais?</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Endereço</label>
+                                <select ng-model="Pessoa.Endereco" ng-options="Endereco.id + ' ' + Endereco.rua + ' ' + Endereco.numero + ' ' + Endereco.complemento + ' ' + Endereco.Bairro.nome  for Endereco in Enderecos" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha um endereço</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">Profissão</label>
+                                <select ng-model="Pessoa.Profissao" ng-options="Profissao.id + ' ' + Profissao.nome + ' ' for Profissao in Profissoes" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha uma profissão</option>
+                                </select>
+                            </div>
+                        </form>
+                        <a href="#pessoa" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarPessoa(Pessoa)">Alterar Pessoa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

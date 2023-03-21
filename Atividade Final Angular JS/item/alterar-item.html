@@ -1,0 +1,46 @@
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+
+                    <div>
+                        <form name="ItemForm">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Nome</span>
+                                <input type="text" class="form-control" id="novo-nome-item" ng-model="Item.nome">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Valor</span>
+                                <input type="text" class="form-control" id="novo-item" ng-model="Item.valor">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text">ID da Compra</label>
+                                <select ng-model="Item.Compra" ng-options="Compra.id for Compra in Compras" class="form-control" ng-required="true">
+                                    <option selected
+                                        value="">Escolha uma Compra</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div ng-show="bairroForm.nome.$dirty" ng-messages="bairroForm.nome.$error">
+                            <div ng-message="required" class="alert alert-danger">
+                                Por favor, preencha o campo nome!
+                            </div>
+                            <div ng-message="minlength" class="alert alert-danger">
+                                O campo nome deve ter no mínimo 10 caracteres.
+                            </div>
+                        </div>
+                        <div ng-show="bairroForm.telefone.$error.required && bairroForm.telefone.$dirty" class="alert alert-danger">
+                            Por favor, preencha o campo telefone!
+                        </div>
+                        <div ng-show="bairroForm.telefone.$error.pattern" class="alert alert-danger">
+                            O campo telefone deve ter o formato DDDDD-DDDD.
+                        </div>
+                        <a href="#/item" class="btn btn-secondary btn-block" data-toggle="modal">Voltar</a>
+                        <button class="btn btn-primary btn-block" ng-click="alterarItem(Item)">Alterar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
